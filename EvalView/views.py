@@ -248,6 +248,9 @@ def direct_assessment(request, code=None, campaign_name=None):
     else:
         html_file = 'EvalView/direct-assessment-context.html'
 
+    if 'namedentit' in campaign_opts.lower():
+        html_file = 'EvalView/direct-assessment-named-entities.html'
+
     context = {
         'active_page': 'direct-assessment',
         'reference_label': reference_label,
